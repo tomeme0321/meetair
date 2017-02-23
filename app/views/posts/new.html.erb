@@ -1,0 +1,53 @@
+<div class="container">
+  <div class="wrapper col-md-8 col-md-offset-2 col-sm-10">
+  <p id="notice"><%= notice %></p>
+  <h1>What's Your Plan?</h1>
+  <%= form_for(@post, url: choose_new_or_edit) do |f| %>
+    <% if @post.errors.any? %>
+      <div id="error_explanation">
+        <h2>Error!!!</h2>
+
+        <ul>
+        <% @post.errors.full_messages.each do |msg| %>
+          <%= msg %>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+
+  <%= form_for (@post) do |f| %>
+    <%= f.label :aiport %>
+    <%= f.text_field :airport, class: 'form-control' %>
+    <br>
+    <%= f.label :terminal %>
+    <%= f.text_field :terminal, class: 'form-control' %>
+    <br>
+    <%= f.label :location %>
+    <%= f.text_field :location, class: 'form-control' %>
+    <br>
+    <%= f.label :purpose %>
+    <%= f.text_field :purpose, class: 'form-control' %>
+    <br>
+    <%= f.label :company %>
+    <%= f.text_field :company, class: 'form-control' %>
+    <br>
+    <%= f.label :destination %>
+    <%= f.text_field :destination, class: 'form-control' %>
+    <br>
+    <%= f.label :FligtDate %>
+    <%= f.text_field :flightdate, class: 'form-control' %>
+    <br>
+    <%= f.label :FlighTime %>
+    <%= f.text_field :flighttime, class: 'form-control' %>
+    <br>
+    <%= f.label :latestcomment %>
+    <%= f.text_field :latestcomment, class: 'form-control' %>
+    <br>
+    <%= f.submit 'post', class: 'btn btn-primary btn-block' %>
+   <% end %>
+  <% end %>
+
+  <%= link_to "Back to the user list", posts_path %>
+ </div>
+</div>

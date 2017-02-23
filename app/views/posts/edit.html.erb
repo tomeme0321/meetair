@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="wrapper col-md-8 col-md-offset-2 col-sm-10">
+    <%= form_for (@post) do |f| %>
+    <%= f.label :aiport %>
+    <%= f.text_field :airport %>
+    <br>
+    <%= f.label :terminal %>
+    <%= f.text_field :terminal %>
+    <br>
+    <%= f.label :location %>
+    <%= f.text_field :location %>
+    <br>
+    <%= f.label :purpose %>
+    <%= f.text_field :purpose %>
+    <br>
+    <%= f.label :company %>
+    <%= f.text_field :company %>
+    <br>
+    <%= f.label :destination %>
+    <%= f.text_field :destination %>
+    <br>
+    <%= f.label :FligtDate %>
+    <%= f.text_field :flightdate %>
+    <br>
+    <%= f.label :FlighTime %>
+    <%= f.text_field :flighttime %>
+    <br>
+    <%= f.label :latestcomment %>
+    <%= f.text_field :latestcomment %>
+    <br>
+    <%= f.submit %>
+  <% end %>
+
+  <%= link_to "Back to the user list", posts_path %>
+ </div>
+</div>

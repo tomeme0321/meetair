@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="wrapper col-md-8 col-md-offset-2 col-sm-10">
+  <h3>Do you wanto to post as below?</h3>
+
+  <%= form_for(@post) do |f| %>
+  <%= f.hidden_field :airport %>
+  <%= f.hidden_field :terminal %>
+  <%= f.hidden_field :location %>
+  <%= f.hidden_field :purpose %>
+  <%= f.hidden_field :company %>
+  <%= f.hidden_field :destination %>
+  <%= f.hidden_field :flightdate %>
+  <%= f.hidden_field :flighttime %>
+  <%= f.hidden_field :latestcomment %>
+
+    <p>Airport: <%= @post.airport %></p>
+    <p>Terminal: <%= @post.terminal %></p>
+    <p>Location: <%= @post.location %></p>
+    <p>Purpose: <%= @post.purpose %></p>
+    <p>Company: <%= @post.company %></p>
+    <p>Destination: <%= @post.destination %></p>
+    <p>Flight Date: <%= @post.flightdate %></p>
+    <p>Flight Time: <%= @post.flighttime %></p>
+    <p>Comment: <%= @post.latestcomment %></p>
+    <%= f.submit "Submit",class: 'btn btn-primary btn-block'  %>
+  <% end %>
+
+  <%= form_for(@post, url: new_post_path, method: 'get') do |f| %>
+    <%= f.hidden_field :airport %>
+    <%= f.hidden_field :terminal %>
+    <%= f.hidden_field :location %>
+    <%= f.hidden_field :purpose %>
+    <%= f.hidden_field :company %>
+    <%= f.hidden_field :destination %>
+    <%= f.hidden_field :flightdate %>
+    <%= f.hidden_field :flighttime %>
+    <%= f.hidden_field :latestcomment %>
+    <%= f.submit "Back", name:'back',  class: 'btn btn-default btn-block' %>
+  <% end %>
+ </div>
+</div>

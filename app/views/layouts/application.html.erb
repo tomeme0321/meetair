@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Meetair</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
+</head>
+<body>
+
+  <header>
+    <ul>
+      <li><%=link_to "Home", root_path %>
+      <li><a href="#">Meetup</a></li>
+      <li><%=link_to "Post", new_post_path %>
+      <li><a href="#">Message</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </header>
+
+<%= yield %>
+
+  <footer>
+    <p>Saotome Inc.</p>
+    <p>© 2015-2016 Copyright Saotome Inc.</p>
+  </footer>
+
+</body>
+</html>
