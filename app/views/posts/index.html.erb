@@ -1,7 +1,7 @@
 <div class="container">
  <div class="wrapper col-md-8 col-md-offset-2 col-sm-10">
   <p><%= notice %></p>
-  <h1>Let's meet up!!!</h1>
+  <h1>Find Your Future Friends!</h1>
   <%= link_to "Create Your Post", new_post_path, class: 'btn btn-default'  %>
   <br><br>
   <% @posts.reverse.each do |post| %>
@@ -14,9 +14,8 @@
    <p>Flight Date: <%= post.flightdate %></p>
    <p>Flight Time: <%= post.flighttime %></p>
    <p>Comment: <%= post.latestcomment %></p>
-   <%= link_to "Edit Your Post", edit_post_path(post.id), class: 'btn btn-default btn-sm btn-success' %>
-   <br><br>
-   <%= link_to "Delete Your Post", post_path(post.id), method: :delete, data: { confirm: 'Are You Sure?'},  class: 'btn btn-default btn-sm btn btn-danger'  %>
+   <%= link_to "Edit", edit_post_path(post.id), class: 'btn btn-default btn-sm btn-success' %>
+   <%= link_to "Delete", post_path(post.id), method: :delete, data: { confirm: 'Are You Sure?'},  class: 'btn btn-default btn-sm btn btn-danger'  %>
    <br><br><br>
   <% end %>
  </div>
