@@ -12,25 +12,32 @@
     <div class="field">
     <%= f.text_field :name, class: "form-control", placeholder: "Name" %>
    </div>
-
-    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-      <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-    <% end %>
-    <br>
-    <div class="field">
-      <%= f.email_field :password, autofocus: true, class: "form-control", placeholder: "New Password" %>
-      <i>(leave blank if you don't want to change it)</i>
-      <% if @minimum_password_length %>
+    <% if @user.provider.blank? %>
+      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+        <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
       <% end %>
-    </div>
-    <br>
+      <br>
+      <div class="field">
+        <%= f.password_field :password, autofocus: true, class: "form-control", placeholder: "New Password" %>
+        <i>(leave blank if you don't want to change it)</i>
+        <% if @minimum_password_length %>
+        <% end %>
+      </div>
+      <br>
+      <div class="field">
+        <%= f.password_field :password_confirmation, autofocus: true, class: "form-control", placeholder: "Password Confirmation" %>
+      </div>
+      <br>
+      <div class="field">
+        <%= f.password_field :current_password, autofocus: true, class: "form-control", placeholder: "Current Password" %>
+        <i>(we need your current password to confirm your changes)</i>
+      </div>
+    <% end %>
+      <br>
     <div class="field">
-      <%= f.email_field :password_confirmation, autofocus: true, class: "form-control", placeholder: "Password Confirmation" %>
-    </div>
-    <br>
-    <div class="field">
-      <%= f.email_field :current_password, autofocus: true, class: "form-control", placeholder: "Current Password" %>
-      <i>(we need your current password to confirm your changes)</i>
+      <%= profile_img(@user) if profile_img(@user) %>
+      <%= f.file_field :avatar %>
+      <%= f.hidden_field :avatar_cache %>
     </div>
 
     <div class="actions">
