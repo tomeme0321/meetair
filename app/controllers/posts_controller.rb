@@ -17,6 +17,7 @@ class PostsController < ApplicationController
     @post.user_id = current_user.id
     if @post.save
       redirect_to posts_path, notice: "Posted;)"
+      NoticeMailer.sendmail_post(@post).deliver
     else
       render 'new'
     end
