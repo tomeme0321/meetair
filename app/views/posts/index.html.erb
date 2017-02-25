@@ -6,8 +6,10 @@
   <br><br>
   <% @posts.reverse.each do |post| %>
   <div class="row">
+     <%= link_to "" do %>
      <p><%= post.user.name %></p>
      <%= profile_img(post.user) %>
+     <% end %>
      <br><br>
      <p>Airport: <%= post.airport %></p>
      <p>Terminal: <%= post.terminal %></p>

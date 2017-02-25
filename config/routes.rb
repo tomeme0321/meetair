@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: {
-  omniauth_callbacks: "users/omniauth_callbacks"
+    omniauth_callbacks: "users/omniauth_callbacks",
+    registrations: 'users/registrations',
+    confirmations: 'users/confirmations',
+    passwords: 'users/passwords',
+    sessions: 'users/sessions'
   }
   get 'posts' => 'posts#index'
   if Rails.env.development?

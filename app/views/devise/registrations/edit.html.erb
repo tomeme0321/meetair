@@ -15,31 +15,34 @@
     </div>
     <br>
     <div class="field">
-    <%= f.text_field :name, class: "form-control", placeholder: "Name" %>
+    <%= f.label :Name %>
+    <%= f.text_field :name, class: "form-control" %>
+    </div>
+    <br>
+    <%= f.label :AGE %>
+    <%= render "select_age", :f => f %>
+    <%= f.label :Gender %>
+    <%= render "select_gender", :f => f %>
+    <%= f.label :Nationality %>
+    <%= render "select_nationality", :f => f %>
+    <div class="field">
+     <%= f.label :Language %>
+     <%= f.text_field :language, class: "form-control" %>
     </div>
     <br>
     <div class="field">
-    <%= f.text_field :age, class: "form-control", placeholder: "Age" %>
+     <%= f.label :Occupation %>
+     <%= f.text_field :occupation, class: "form-control" %>
     </div>
     <br>
     <div class="field">
-    <%= f.text_field :gender, class: "form-control", placeholder: "Gender" %>
+     <%= f.label :Interest %>
+     <%= f.text_field :interest, class: "form-control" %>
     </div>
     <br>
     <div class="field">
-    <%= f.text_field :nationality, class: "form-control", placeholder: "Nationality" %>
-    </div>
-    <br>
-    <div class="field">
-    <%= f.text_field :language, class: "form-control", placeholder: "Language" %>
-    </div>
-    <br>
-    <div class="field">
-    <%= f.text_field :interest, class: "form-control", placeholder: "Interest" %>
-    </div>
-    <br>
-    <div class="field">
-    <%= f.text_field :freecomment, class: "form-control", placeholder: "Comment" %>
+     <%= f.label :Comment %>
+     <%= f.text_area :freecomment, class: "form-control" %>
     </div>
     <br><br>
     <% if @user.provider.blank? %>
