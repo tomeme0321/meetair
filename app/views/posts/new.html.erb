@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="wrapper col-md-8 col-md-offset-2 col-sm-10">
+  <div class="wrapper col-md-6 col-md-offset-3 col-sm-10">
   <p id="notice"><%= notice %></p>
   <h1>What's Your Plan?</h1>
   <%= form_for(@post, url: choose_new_or_edit) do |f| %>
@@ -18,31 +18,29 @@
 
   <%= form_for (@post) do |f| %>
     <%= f.label :aiport %>
-    <%= f.text_field :airport, class: 'form-control' %>
-    <br>
+    <%= render "select_airport", :f => f %>
     <%= f.label :terminal %>
-    <%= f.text_field :terminal, class: 'form-control' %>
-    <br>
+    <%= render "select_terminal", :f => f %>
     <%= f.label :location %>
     <%= f.text_field :location, class: 'form-control' %>
     <br>
     <%= f.label :purpose %>
-    <%= f.text_field :purpose, class: 'form-control' %>
-    <br>
+    <%= render "select_purpose", :f => f %>
     <%= f.label :company %>
-    <%= f.text_field :company, class: 'form-control' %>
-    <br>
+    <%= render "select_company", :f => f %>
     <%= f.label :destination %>
     <%= f.text_field :destination, class: 'form-control' %>
     <br>
-    <%= f.label :"Fligt Date" %>
-    <%= f.text_field :flightdate, class: 'form-control' %>
+    <div class="field">
+      <%= f.label :"Fligt Date" %>
+        <%= f.text_field :flightdate, class: 'datepicker' %>
+    </div>
     <br>
     <%= f.label :"Fligt Time" %>
     <%= f.text_field :flighttime, class: 'form-control' %>
     <br>
     <%= f.label :Comment %>
-    <%= f.text_field :latestcomment, class: 'form-control' %>
+    <%= f.text_area :latestcomment, class: 'form-control' %>
     <br>
     <%= f.submit 'post', class: 'btn btn-primary btn-block' %>
    <% end %>

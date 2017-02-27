@@ -1,6 +1,7 @@
 class Post < ActiveRecord::Base
   validates :airport, presence:true
   belongs_to :user
+  has_many :comments, dependent: :destroy
   #validates :terminal, presence:true
   #validates :location, presence:true
   #validates :purpose, presence:true

@@ -44,6 +44,11 @@ class PostsController < ApplicationController
     render :new if @post.invalid?
   end
 
+  def show
+    @comment = @post.comments.build
+    @comments = @post.comments
+  end
+
   private
   def posts_params
     params.require(:post).permit(:airport, :terminal, :location, :purpose, :company, :destination, :flightdate, :flighttime, :latestcomment)
