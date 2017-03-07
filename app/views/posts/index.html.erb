@@ -12,14 +12,14 @@
      <% end %>
      <br><br>
      <p>Airport: <%= post.airport %></p>
-     <p>Terminal: <%= post.terminal %></p>
-     <p>Location: <%= post.location %></p>
+     <!--<p>Terminal: <%= post.terminal %></p>-->
+    <!-- <p>Location: <%= post.location %></p>-->
      <p>Purpose: <%= post.purpose %></p>
-     <p>Company: <%= post.company %></p>
-     <p>Destination: <%= post.destination %></p>
+     <!--<p>Company: <%= post.company %></p>-->
+     <!--<p>Destination: <%= post.destination %></p>-->
      <p>Flight Date: <%= post.flightdate %></p>
-     <p>Flight Time: <%= post.flighttime %></p>
-     <p>Comment: <%= post.latestcomment %></p>
+     <!--<p>Flight Time: <%= post.flighttime %></p>-->
+     <!--<p>Comment: <%= post.latestcomment %></p>-->
      <%= link_to "Edit", edit_post_path(post.id), class: 'btn btn-default btn-sm btn-success' %>
      <%= link_to "Delete", post_path(post.id), method: :delete, data: { confirm: 'Are You Sure?'},  class: 'btn btn-default btn-sm btn btn-danger'  %>
  </div>

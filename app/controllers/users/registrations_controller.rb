@@ -28,6 +28,13 @@ class Users::RegistrationsController < Devise::RegistrationsController
     redirect_to edit_user_registration_path
   end
 
+  def show
+    @user = User.find(params[:user_id])
+  end
+
+  def confirm
+  end
+
   private
 
   def configure_permitted_parameters
