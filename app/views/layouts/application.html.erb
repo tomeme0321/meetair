@@ -16,7 +16,6 @@
          <% if user_signed_in? %>
            <li><%=link_to "Meetup", posts_path %>
            <li><%=link_to "Post", new_post_path %>
-           <li><a href="#">Message</a></li>
            <li><%=link_to "Contact", new_contact_path %>
            <li><%= link_to 'My Profile', edit_user_registration_path %></li>
            <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>

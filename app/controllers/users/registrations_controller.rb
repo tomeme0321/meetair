@@ -29,7 +29,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def show
-    @user = User.find(params[:user_id])
+    @user = User.find(params[:id])
   end
 
   def confirm
@@ -57,11 +57,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
     devise_parameter_sanitizer.permit(:sign_up, keys: keys)
     devise_parameter_sanitizer.permit(:account_update, keys: keys)
   end
-
-  # GET /resource/edit
-  # def edit
-  #   super
-  # end
 
   # DELETE /resource
   # def destroy
