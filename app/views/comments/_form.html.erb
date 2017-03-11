@@ -1,9 +1,9 @@
 <%= form_for([post, comment], remote: true) do |f| %>
   <%= f.hidden_field :post_id %>
   <div class="field">
-    <%= f.text_field :content, placeholder: "内容", class: "form-control"  %>
+    <%= f.text_field :content, placeholder: "Write something...", class: "form-control"  %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Comment', class: 'btn btn-primary btn-block' %>
   </div>
 <% end %>

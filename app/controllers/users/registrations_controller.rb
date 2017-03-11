@@ -28,6 +28,13 @@ class Users::RegistrationsController < Devise::RegistrationsController
     redirect_to edit_user_registration_path
   end
 
+  def show
+    @user = User.find(params[:id])
+  end
+
+  def confirm
+  end
+
   private
 
   def configure_permitted_parameters
@@ -50,11 +57,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
     devise_parameter_sanitizer.permit(:sign_up, keys: keys)
     devise_parameter_sanitizer.permit(:account_update, keys: keys)
   end
-
-  # GET /resource/edit
-  # def edit
-  #   super
-  # end
 
   # DELETE /resource
   # def destroy

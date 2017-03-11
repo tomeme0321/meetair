@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
   end
+
   resources :posts do
     resources :comments
 
@@ -18,6 +19,15 @@ Rails.application.routes.draw do
       post :confirm
     end
   end
+
+  resources :contacts
+
+  devise_scope :user do
+    get "/registrations/:id", to: "users/registrations#show"
+  end
+
+  resources :registrations
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
