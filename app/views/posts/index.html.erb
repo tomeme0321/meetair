@@ -7,7 +7,7 @@
   <% @posts.reverse.each do |post| %>
   <div class="row">
      <%= link_to post_path(post) do %>
-     <p><%= post.user.name %></p>
+     <p><%= post.user.nickname %></p>
      <%= profile_img(post.user) %>
      <% end %>
      <br><br>

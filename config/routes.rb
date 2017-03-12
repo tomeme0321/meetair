@@ -22,11 +22,11 @@ Rails.application.routes.draw do
 
   resources :contacts
 
-  devise_scope :user do
-    get "/registrations/:id", to: "users/registrations#show"
-  end
+  #devise_scope :user do
+    #get "/registrations/:id", to: "users/registrations#show"
+  #end
 
-  resources :registrations
+  #resources :registrations
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
