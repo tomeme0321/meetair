@@ -22,6 +22,10 @@ Rails.application.routes.draw do
 
   resources :contacts
 
+  resources :conversations do
+    resources :messages
+  end
+
   #devise_scope :user do
     #get "/registrations/:id", to: "users/registrations#show"
   #end
