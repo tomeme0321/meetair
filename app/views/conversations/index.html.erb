@@ -8,6 +8,12 @@
         <td>
           <% if conversation.target_user(current_user).present? %>
             <%= link_to conversation.target_user(current_user).nickname, conversation_messages_path(conversation)%>
+            <br>
+            <%= profile_img(conversation.target_user(current_user)) %>
+            <br>
+            <%= conversation.target_user(current_user).nationality %>
+            <br>
+            <%= conversation.target_user(current_user).gender %>
           <% end %>
         </td>
       <% end %>

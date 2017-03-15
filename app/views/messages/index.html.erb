@@ -3,14 +3,14 @@
   <% if @over_ten %>
     <%= link_to 'Previous Messages', '?m=all' %>
   <% end %>
-
+  <h2>Message with <%= @conversation.target_user(current_user).nickname %></h2>
   <div class="ui segment">
     <% @messages.each do |message| %>
       <% if message.body %>
         <% user = User.find(message.user_id) %>
         <div class="item">
           <div class="content">
-            <div class="header"><strong><%= user.name %></strong> <%= message.message_time %></div>
+            <div class="header"><strong><%= user.nickname %></strong> <%= message.message_time %></div>
             <div class="list">
               <div class="item">
                 <i class="right triangle icon"></i>
