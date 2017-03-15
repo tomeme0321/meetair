@@ -16,7 +16,7 @@ Rails.application.routes.draw do
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
   end
 
-  resources :users, only: [:index]
+  resources :users, only: [:index, :show]
 
   resources :relationships, only: [:create, :destroy]
 
