@@ -5,7 +5,7 @@
     <% if @contact.errors.any? %>
     <div id="error_explanation">
        <h2>You have <%= @contact.errors.count %> error(s)!</h2>
-    </div> 
+    </div>
     <% end %>
     <%= f.label :name %><br>
     <%= f.text_field :name, class: 'form-control' %>
@@ -19,6 +19,6 @@
     <%= f.submit 'Send Message', class: 'btn btn-primary btn-block' %>
   <% end %>
 
-  <%= link_to "Back to Home", root_path %>
+  <%= link_to "Back to Home", root_path, class: 'btn btn-warning btn-block' %>
  </div>
 </div>

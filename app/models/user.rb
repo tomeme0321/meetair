@@ -7,6 +7,9 @@ class User < ActiveRecord::Base
   has_many :followed_users, through: :relationships, source: :followed
   has_many :followers, through: :reverse_relationships, source: :follower
 
+  validates :nickname, presence:true, length: { maximum: 10 }
+
+
   def follow!(other_user)
     relationships.create!(followed_id: other_user.id)
   end
