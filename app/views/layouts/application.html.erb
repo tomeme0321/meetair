@@ -2,14 +2,29 @@
 <html>
 <head>
   <title>Meetair</title>
+  <script src="https://js.pusher.com/3.2/pusher.min.js"></script>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
+  <% if user_signed_in? %>
+  <script>
+     var pusher = new Pusher('<%= ENV["PUSHER_KEY"] %>',{
+       encrypted: true
+     });
+
+     var channel = pusher.subscribe("user_<%= current_user.id %>_channel");
+     channel.bind('comment_created', function(data) {
+       alert(data.message);
+     });
+     channel.bind('notification_created', function(data) {
+       $('#unread_count').html(data.unread_counts);
+     });
+  </script>
+  <% end %>
 </head>
 <body>
-
   <header>
     <ul>
       <li><%=link_to "Home", root_path %>
@@ -19,6 +34,9 @@
            <li><%=link_to "Contact", new_contact_path %>
            <li><%= link_to 'My Profile', edit_user_registration_path %></li>
            <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
+           <%= link_to notifications_index_path, class: "navbar-brand"  do %>
+            <i class="fa fa-bell fa-1x"><span id="unread_count"><%= @notifications_count %></span></i>
+           <% end %>
          <% else %>
            <li><%= link_to 'Login', new_user_session_path %></li>
            <li><%= link_to 'Signup', new_user_registration_path %></li>

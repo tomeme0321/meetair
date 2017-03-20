@@ -1,0 +1,16 @@
+<h2>Notification</h2>
+<ul>
+  <% @notifications.each do |notification| %>
+  <hr>
+    <li>
+      <% unless notification.read == "true" %>
+      <span><%= notification.read = "UNREAD" %></span>
+      <% end %>
+      <p>
+        <%= notification.comment.user.try(:name) %> commented
+        on your post.（<%= link_to "#{notification.comment.post.airport}", post_path(notification.comment.post, notification_id: notification.id) %>）
+      </p>
+      <p><%= notification.created_at %></p>
+    </li>
+  <% end %>
+</ul>

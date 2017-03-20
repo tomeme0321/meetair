@@ -48,6 +48,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @comment = @post.comments.build
     @comments = @post.comments
+    Notification.find(params[:notification_id]).update(read: true) if params[:notification_id]
   end
 
   private
