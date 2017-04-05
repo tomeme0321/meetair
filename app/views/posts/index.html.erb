@@ -4,6 +4,13 @@
   <h1>Find Your Future Friends!</h1>
   <%= link_to "Create Your Post", new_post_path, class: 'btn btn-primary'  %>
   <br><br>
+
+  <%= search_form_for @q do |f| %>
+  <%= f.label :aiport %>
+  <%= render "select_airport", :f => f %>
+  <%=  f.submit 'Search' %>
+  <% end %>
+
   <% @posts.reverse.each do |post| %>
   <div class="row">
      <%= link_to post_path(post) do %>

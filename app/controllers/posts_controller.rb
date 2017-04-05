@@ -1,7 +1,14 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!
+
   def index
-    @posts = Post.all
+    @q = Post.search(params[:q])
+    # @posts = @q.result(distinct: true)
+    if params[:q]
+      @posts = Post.where(airport: params[:q]["airport"])
+    else
+      @posts = Post.all
+    end
   end
 
   def new
@@ -35,8 +42,12 @@ class PostsController < ApplicationController
 
   def destroy
     @post = Post.find(params[:id])
+  if current_user == @post.user
     @post.destroy
     redirect_to posts_path, notice: "Deleted:("
+  else
+    redirect_to post_path, notice: "Sorry, you don't have any permission to delete."
+  end
   end
 
   def confirm
