@@ -8,7 +8,7 @@
   <%= search_form_for @q do |f| %>
   <%= f.label :aiport %>
   <%= render "select_airport", :f => f %>
-  <%=  f.submit 'Search' %>
+  <%=  f.submit 'Search', class: 'btn btn-warning'  %>
   <% end %>
 
   <% @posts.reverse.each do |post| %>
@@ -28,8 +28,10 @@
      <p>Flight Date: <%= post.flightdate %></p>
      <!--<p>Flight Time: <%= post.flighttime %></p>-->
      <!--<p>Comment: <%= post.latestcomment %></p>-->
+     <% if post.user_id == current_user.id %>
      <%= link_to "Edit", edit_post_path(post.id), class: 'btn btn-default btn-sm btn-success' %>
      <%= link_to "Delete", post_path(post.id), method: :delete, data: { confirm: 'Are You Sure?'},  class: 'btn btn-default btn-sm btn btn-danger'  %>
+     <% end %>
  </div>
    <br><br><br>
   <% end %>
