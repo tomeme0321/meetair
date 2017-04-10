@@ -7,7 +7,7 @@ class PostsController < ApplicationController
     if params[:q]
       @posts = Post.where(airport: params[:q]["airport"])
     else
-      @posts = Post.all
+      @posts = Post.where("flightdate >= ?", Date.today)
     end
   end
 

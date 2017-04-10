@@ -5,22 +5,22 @@
   <%= form_for(@post) do |f| %>
   <%= f.hidden_field :airport %>
   <%= f.hidden_field :terminal %>
-  <%= f.hidden_field :location %>
+  <!--<%= f.hidden_field :location %>-->
   <%= f.hidden_field :purpose %>
   <%= f.hidden_field :company %>
-  <%= f.hidden_field :destination %>
+  <!--<%= f.hidden_field :destination %>-->
   <%= f.hidden_field :flightdate %>
   <%= f.hidden_field :flighttime %>
   <%= f.hidden_field :latestcomment %>
 
     <p>Airport: <%= @post.airport %></p>
     <p>Terminal: <%= @post.terminal %></p>
-    <p>Location: <%= @post.location %></p>
+    <!--<p>Location: <%= @post.location %></p>-->
     <p>Purpose: <%= @post.purpose %></p>
-    <p>Company: <%= @post.company %></p>
-    <p>Destination: <%= @post.destination %></p>
+    <p>Companion: <%= @post.company %></p>
+    <!--<p>Destination: <%= @post.destination %></p>-->
     <p>Flight Date: <%= @post.flightdate %></p>
-    <p>Flight Time: <%= @post.flighttime %></p>
+    <!--<p>Flight Time: <%= @post.flighttime %></p>-->
     <p>Comment: <%= @post.latestcomment %></p>
     <%= f.submit "Submit",class: 'btn btn-primary btn-block'  %>
   <% end %>

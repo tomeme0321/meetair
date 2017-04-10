@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170320051050) do
+ActiveRecord::Schema.define(version: 20170408083905) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -72,7 +72,7 @@ ActiveRecord::Schema.define(version: 20170320051050) do
     t.text     "purpose"
     t.text     "company"
     t.string   "destination"
-    t.string   "flightdate"
+    t.date     "flightdate"
     t.string   "flighttime"
     t.text     "latestcomment"
     t.datetime "created_at",    null: false

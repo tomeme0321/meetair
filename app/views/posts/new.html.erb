@@ -20,23 +20,21 @@
     <%= render "select_airport", :f => f %>
     <%= f.label :terminal %>
     <%= render "select_terminal", :f => f %>
-    <%= f.label :location %>
-    <%= f.text_field :location, class: 'form-control',placeholder: "Not Required"  %>
-    <br>
+    <!--<%= f.label :location %>-->
+    <!--<%= f.text_field :location, class: 'form-control',placeholder: "Not Required"  %>-->
     <%= f.label :purpose %>
     <%= render "select_purpose", :f => f %>
-    <%= f.label :company %>
-    <%= render "select_company", :f => f %>
-    <%= f.label :destination %>
-    <%= f.text_field :destination, class: 'form-control', placeholder: "Not Required"  %>
-    <br>
+    <%= f.label :companion %>
+    <%= render "select_companion", :f => f %>
+    <!--<%= f.label :destination %>-->
+    <!--<%= f.text_field :destination, class: 'form-control', placeholder: "Not Required"  %>-->
     <div class="field">
       <%= f.label :"Fligt Date" %>
         <%= f.text_field :flightdate, :class => 'datepicker' %>
     </div>
     <br>
-    <%= f.label :"flight Time (approximate)" %>
-    <%= render "select_flighttime", :f => f %>
+    <!--<%= f.label :"flight Time (approximate)" %>-->
+    <!--<%= render "select_flighttime", :f => f %>-->
     <%= f.label :Comment %>
     <%= f.text_area :latestcomment, class: 'form-control' %>
     <br>
