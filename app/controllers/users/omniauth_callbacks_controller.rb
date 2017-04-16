@@ -1,5 +1,9 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def facebook
+    puts "AAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      puts "AAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+        puts "AAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          puts "AAAAAAAAAAAAAAAAAAAAAAAAAAAA1"
     @user = User.find_for_facebook_oauth(request.env["omniauth.auth"], current_user)
 
     if @user.persisted?
@@ -12,6 +16,11 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   end
 
   def linkedin
+    puts "AAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      puts "AAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+        puts "AAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          puts "AAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+
     @user = User.find_for_linkedin_oauth(request.env["omniauth.auth"], current_user)
 
     if @user.persisted?
